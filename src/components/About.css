@@ -1,0 +1,402 @@
+.about {
+  position: relative;
+  padding: 10rem 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ─── Ambient Lighting ───────────────────────────────────────── */
+.about__ambient-orb {
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.12) 0%,
+    rgba(139, 92, 246, 0.04) 45%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about__ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.about__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ─── Section Header ────────────────────────────────────────── */
+.about__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about__label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-block;
+}
+
+.about__headline {
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--fg);
+}
+
+/* ─── Grid ──────────────────────────────────────────────────── */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ─── Left Narrative ─────────────────────────────────────────── */
+.about__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.about__intro {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #f5f5f7;
+  letter-spacing: -0.015em;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
+.about__body-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__body {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--fg-muted);
+  font-weight: 300;
+  letter-spacing: 0.005em;
+}
+
+/* ─── Closing Statement (Special Visual Emphasis) ────────────── */
+.about__closing {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.75rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(139, 92, 246, 0.03) 60%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(99, 102, 241, 0.08);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about__closing:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.45),
+    0 0 45px rgba(99, 102, 241, 0.16);
+}
+
+.about__closing-glow {
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 140%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(99, 102, 241, 0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.about__closing-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent) 30%,
+    var(--accent-2) 70%,
+    transparent 100%
+  );
+}
+
+.about__closing-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.about__closing-line {
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.about__closing-line--1 {
+  color: var(--fg);
+}
+
+.about__closing-line--2 {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 60%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* ─── Right Column: Card ─────────────────────────────────────── */
+.about__side {
+  position: sticky;
+  top: 6rem;
+}
+
+.about__card {
+  position: relative;
+  padding: 2.25rem 2rem;
+  background: rgba(14, 14, 16, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(99, 102, 241, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.about__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.about__card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.25rem 0.65rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 40px;
+}
+
+.about__card-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #818cf8;
+  box-shadow: 0 0 8px #818cf8;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.about__card-badge-text {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+}
+
+.about__card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.about__card-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+}
+
+.about__card-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.about__card-row {
+  display: grid;
+  grid-template-columns: 110px 18px 1fr;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.about__card-key {
+  color: rgba(240, 240, 240, 0.45);
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.about__card-arrow {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+}
+
+.about__card-val {
+  color: #e5e5e7;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  word-break: break-word;
+}
+
+.about__card-val--highlight {
+  color: #a5b4fc;
+  font-weight: 600;
+}
+
+.about__card-footer {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about__card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+}
+
+/* ─── Responsive Breakdown ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about {
+    padding: 7rem 2rem;
+  }
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .about__side {
+    position: static;
+  }
+  .about__card {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 5rem 1.5rem;
+  }
+  .about__inner {
+    gap: 3rem;
+  }
+  .about__grid {
+    gap: 3rem;
+  }
+  .about__intro {
+    font-size: 1.15rem;
+    padding-left: 1rem;
+  }
+  .about__body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .about__closing {
+    padding: 1.35rem 1.4rem;
+  }
+  .about__closing-line {
+    font-size: 1.25rem;
+  }
+  .about__card {
+    padding: 1.75rem 1.4rem;
+    border-radius: 16px;
+  }
+  .about__card-row {
+    grid-template-columns: 95px 16px 1fr;
+    font-size: 0.82rem;
+    gap: 0.25rem;
+  }
+  .about__card-key {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__card-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  .about__card-arrow {
+    display: none;
+  }
+  .about__card-key {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .about__card-val {
+    font-size: 0.85rem;
+  }
+}
